@@ -61,10 +61,13 @@
                     }
                 },
                 email: {
-                    rules: 'required',
+                    rules: 'required|min_length[16]',
                 },
                 number: {
-                    rules: 'required|min_length[11]'
+                    rules: 'required|min_length[11]',
+                    errors: {
+                        min_length: 'Mobile number is too short!'
+                    }
                 }
             }
             let val_2 = new Validator(my_form);
