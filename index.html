@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <form id="form">
+            <input name="user" value="user">
+            <input name="pass" value="password">
+        </form>
+        <input id="input">
+        <script src="./index.js"></script>
+        <script>
+            let val = new Validator(form);
+            let rules = {
+                pass: {
+                    rules: 'required|min_length[6]',
+                    errors: {
+                        required: 'password can not be missing!',
+                        min_length: 'password must be greater than 6 chars'
+                    }
+                },
+                user: {
+                    rules: 'required|min_length[3]',
+                    errors: {
+                        required: 'username can not be missing!',
+                        min_length: 'username must be greater than 3 chars'
+                    }
+                },
 
+                school: {
+                    rules: 'required|min_length[3]',
+                    // errors: {
+                    //     required: 'username can not be missing!',
+                    //     min_length: 'username must be greater than 3 chars'
+                    // }
+                },
+                age : {
+                    rules: 'required'
+                }
+            }
+            let validation = val.validate(rules);
+
+            console.log(val.errors)
+
+            let my_form = new FormData();
+            my_form.append('login', 'fritzdultimate');
+            my_form.append('email', 'fritzdultimate@gmail.com');
+            my_form.append('number', '+23438222565');
+
+            let rules_2 = {
+                login: {
+                    rules: 'required|min_length[15]',
+                    errors: {
+                        required: 'Login form is empty'
+                    }
+                },
+                email: {
+                    rules: 'required',
+                },
+                number: {
+                    rules: 'required|min_length[11]'
+                }
+            }
+            let val_2 = new Validator(my_form);
+            let validation_2 = val_2.validate(rules_2);
+
+            console.log(val_2.errors)
+
+        </script>
+    </body>
+</html> 
