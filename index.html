@@ -16,10 +16,11 @@
         <input id="input">
         <script src="./index.js"></script>
         <script>
+
             let val = new Validator(form);
             let rules = {
                 pass: {
-                    rules: 'required|min_length[6]',
+                    rules: 'required|min_length[6, 4]',
                     errors: {
                         required: 'password can not be missing!',
                         min_length: 'password must be greater than 6 chars'
@@ -49,9 +50,11 @@
             console.log(val.errors)
 
             let my_form = new FormData();
-            my_form.append('login', 'fritzdultimate');
+            my_form.append('login', 'username');
             my_form.append('email', 'fritzdultimate@gmail.com');
             my_form.append('number', '+23438222565');
+            my_form.append('password', 'fritz');
+            my_form.append('repass', 'fritz');
 
             let rules_2 = {
                 login: {
@@ -61,19 +64,30 @@
                     }
                 },
                 email: {
-                    rules: 'required|min_length[16]',
+                    rules: 'required|valid_email',
                 },
                 number: {
-                    rules: 'required|min_length[11]',
+                    rules: 'required|min_length[6]|numeric',
                     errors: {
-                        min_length: 'Mobile number is too short!'
+                        min_length: 'Mobile number is too short!', 
                     }
+                },
+
+                password: {
+                    rules: 'required|min_length[4]|max_length[45]'
+                },
+                repass: {
+                    rules: 'matches[password]'
                 }
             }
             let val_2 = new Validator(my_form);
             let validation_2 = val_2.validate(rules_2);
 
+            console.log(validation_2) // consoles false on error
+
             console.log(val_2.errors)
+
+            
 
         </script>
     </body>
