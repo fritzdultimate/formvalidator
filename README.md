@@ -4,12 +4,12 @@
 ## Table Of Contents
 -----------
 
-* .[What Is Formvalidator].(#what-is-fv)
-* .[Initialization].(#initialization)
-* .[Creating Rules].(#creatin-rules)
-* .[Listing Errors].(#listing-errors)
-* .[What Next].(#what-next)
-* .[Contributing].(#contributing)
+* [What Is Formvalidator](#what-is-fv)
+* [Initialization](#initialization)
+* [Creating Rules](#creatin-rules)
+* [Listing Errors](#listing-errors)
+* [What Next](#what-next)
+* [Contributing](#contributing)
 
 <a name="what-is-fv"></a>
 
