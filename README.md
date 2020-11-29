@@ -116,6 +116,19 @@ If you take a close look at the above codes, you will notice two things:
 * Validation for **age** field is missing and hence won't be validated.
 * `errors` key is missing for the **user** field, hence the default error messages will be used.
 
+The method `validate(rules)` returns a boolean, which can be used for check.
+
+E.g.
+
+```javascript
+    if(!vldtr.validate(rules)) {
+        // hault, form didn't validate correctly, display errors to users or do as you wish...
+    } else {
+        // continue execution of codes...
+    }
+    
+```
+
 --------------
 
 <a name="#listing-errors"></a>
