@@ -2,7 +2,6 @@
 <br><br>
 
 ## Table Of Contents
------------
 
 * [What Is Formvalidator](#what-is-fv)
 * [Initialization](#initialization)
